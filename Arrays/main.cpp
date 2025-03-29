@@ -8,8 +8,8 @@ int Sum(int arr[], const int n); // Прототип функции: возвр�
 double Avg(int arr[], const int n); // Прототип функции: возвращает среднее арифметическое элементов массива
 int MinValueIn(int arr[], const int n); // Прототип функции: возвращает минимальное значение в массиве
 int MaxValueIn(int arr[], const int n); // Прототип функции: возвращает максимальное значение в массиве
-void ShiftLeft(int arr[], const int n); // Прототип функции: сдвигает массив на заданное число элементов влево
-void ShiftRight(int arr[], const int n); // Прототип функции: сдвигает массив на заданное число элементов вправо
+void ShiftLeft(int arr[], const int n, const int shift); // Прототип функции: сдвигает массив на заданное число элементов влево
+void ShiftRight(int arr[], const int n, const int shift); // Прототип функции: сдвигает массив на заданное число элементов вправо
 
 void main()
 {
@@ -24,8 +24,28 @@ void main()
 	cout << "Среднее арифметическое элементов массива: " << Avg(arr, n) << endl;
 	cout << "Минимальное значение в массиве: " << MinValueIn(arr, n) << endl;
 	cout << "Максимальное значение в массиве: " << MaxValueIn(arr, n) << endl;
-	ShiftLeft(arr, n);
-	ShiftRight(arr, n);	
+	
+	cout << "\n\n\n" << endl;
+	const int SIZE = 10;
+	int brr[SIZE];
+	FillRand(brr, SIZE);
+	Print(brr, SIZE);
+	Sort(brr, SIZE);
+	Print(brr, SIZE);
+	cout << "Сумма элементов массива: " << Sum(brr, SIZE) << endl;
+	cout << "Среднее арифметическое элементов массива: " << Avg(brr, SIZE) << endl;
+	cout << "Минимальное значение в массиве: " << MinValueIn(brr, SIZE) << endl;
+	cout << "Максимальное значение в массиве: " << MaxValueIn(brr, SIZE) << endl;
+	cout << "\n" << endl;
+	
+	Print(brr, SIZE);
+	int shift;
+	cout << "Введите колиество сдвигов: "; cin >> shift;
+	ShiftLeft(brr, SIZE, shift);
+	Print(brr, SIZE);
+	cout << "\n" << endl;
+	ShiftRight(brr, SIZE, shift);
+	Print(brr, SIZE);
 }
 
 void FillRand(int arr[], const int n) //функция возвращает псевдослучайное число в диапазоне от 0 до 32 767.
@@ -69,30 +89,40 @@ int Sum(int arr[], const int n)
 }
 double Avg(int arr[], const int n)
 {
-	int sum = Sum(arr, n);
-	return (double)sum / n;
+	/*int sum = Sum(arr, n);
+	return (double)sum / n;*/
+	return (double)Sum(arr, n) / n;
 }
 int MinValueIn(int arr[], const int n)
 {
-	int MIN = arr[0];
-	for (int i = 0; i < n; i++)
+	int min = arr[0];
+	for (int i = 1; i < n; i++)
 	{
-		if (arr[i] < arr[0]) MIN = arr[i];
+		if (arr[i] < min) min = arr[i];
 	}
-	return MIN;
+	return min;
 }
 int MaxValueIn(int arr[], const int n)
 {
-	int MAX = arr[0];
-	for (int i = 0; i < n; i++)
+	int max = arr[0];
+	for (int i = 1; i < n; i++)
 	{
-		if (arr[i] > arr[0]) MAX = arr[i];
+		if (arr[i] > max) max = arr[i];
 	}
-	return MAX;
+	return max;
 }
-void ShiftLeft(int arr[], const int n)
+void ShiftLeft(int arr[], const int n, const int shift)
 {
-	int shift;
+	for (int i = 0; i < shift; i++)
+	{
+		int buffer = arr[0];
+		for (int i = 1; i < n; i++)
+		{
+			arr[i - 1] = arr[i];
+		}
+		arr[n - 1] = buffer;
+	}
+	/*int shift;
 	cout << "Введите количество сдвигов влево: "; cin >> shift;
 	for (int i = 0; i < shift; i++)
 	{
@@ -104,11 +134,20 @@ void ShiftLeft(int arr[], const int n)
 		arr[n - 1] = temp;
 	}
 	cout << "предыдущий массив после сдвига влево на " << shift << " элементов: " << endl;
-	Print(arr, n);
+	Print(arr, n);*/
 }
-void ShiftRight(int arr[], const int n)
+void ShiftRight(int arr[], const int n, const int shift)
 {
-	int shift;
+	for (int i = 0; i < shift; i++)
+	{
+		int buffer = arr[n-1];
+		for (int i = n - 1; i > 0; i--)
+		{
+			arr[i] = arr[i-1];
+		}
+		arr[0] = buffer;
+	}
+	/*int shift;
 	cout << "Введите количество сдвигов вправо: "; cin >> shift;
 	for (int i = 0; i < shift; i++)
 	{
@@ -120,5 +159,5 @@ void ShiftRight(int arr[], const int n)
 		arr[0] = temp;
 	}
 	cout << "Предыдцщий массив после сдвига вправо на " << shift << " элементов: " << endl;;
-	Print(arr, n);
+	Print(arr, n);*/
 }
