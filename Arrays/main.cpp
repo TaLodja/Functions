@@ -2,8 +2,8 @@
 using namespace std;
 
 #define delimiter "\n-----------------------------------------\n"
-const int ROWS = 4;
-const int COLS = 5;
+const int ROWS = 10;
+const int COLS = 10;
 int buff_h[COLS];
 double buff_h_d[COLS];
 int buff_v[ROWS];
@@ -11,8 +11,8 @@ double buff_v_d[ROWS];
 
 void FillRand(int arr[], const int n);  // Прототип функции: заполняет массив случайными числами
 void FillRand(double arr[], const int n);
-void FillRand(int arr[ROWS][COLS], const int ROWS, const int COLS);
-void FillRand(double arr[ROWS][COLS], const int ROWS, const int COLS);
+void FillRand(int arr[ROWS][COLS], const int ROWS, const int COLS, int minRand=0, int maxRand=100);
+void FillRand(double arr[ROWS][COLS], const int ROWS, const int COLS, double minRand = 0, double maxRand = 100);
 
 void Print(double arr[], const int n);  // Прототип функции: выводит массив на экран
 void Print(int arr[], const int n);
@@ -21,8 +21,10 @@ void Print(double arr[ROWS][COLS], const int ROWS, const int COLS);
 
 void Sort(int arr[], const int n);  // Прототип функции: сортирует массив
 void Sort(double arr[], const int n);
-void Sort(int arr[ROWS][COLS], const int ROWS, const int COLS, char dir);
-void Sort(double arr[ROWS][COLS], const int ROWS, const int COLS, char dir);
+void Sort(int arr[ROWS][COLS], const int ROWS, const int COLS);
+//void Sort(int arr[ROWS][COLS], const int ROWS, const int COLS, char dir);
+void Sort(double arr[ROWS][COLS], const int ROWS, const int COLS);
+//void Sort(double arr[ROWS][COLS], const int ROWS, const int COLS, char dir);
 
 int Sum(int arr[], const int n); // Прототип функции: возвращает сумму элементов массива
 double Sum(double arr[], const int n);
@@ -47,12 +49,12 @@ double MaxValueIn(double arr[ROWS][COLS], const int ROWS, const int COLS);
 void ShiftLeft(int arr[], const int n, int shift); // Прототип функции: сдвигает массив на заданное число элементов влево
 void ShiftLeft(double arr[], const int n, int shift);
 void ShiftLeft(int arr[ROWS][COLS], const int ROWS, const int COLS, int shift);
-void ShiftLeft(double arr[ROWS][COLS], const int ROWS, const int COLS, int shift);
+//void ShiftLeft(double arr[ROWS][COLS], const int ROWS, const int COLS, int shift);
 
 void ShiftRight(int arr[], const int n, int shift); // Прототип функции: сдвигает массив на заданное число элементов вправо
 void ShiftRight(double arr[], const int n, int shift);
 void ShiftRight(int arr[ROWS][COLS], const int ROWS, const int COLS, int shift);
-void ShiftRight(double arr[ROWS][COLS], const int ROWS, const int COLS, int shift);
+//void ShiftRight(double arr[ROWS][COLS], const int ROWS, const int COLS, int shift);
 
 void main()
 {
@@ -60,7 +62,7 @@ void main()
 	
 	// Одномерный массив с целочисленными значениями
 
-	const int n = 10;
+	/*const int n = 10;
 	int arr[n];
 	FillRand(arr, n); //Заполнение массива случайными числами	
 	Print(arr, n); //Вывод исходного массива на экран
@@ -106,16 +108,16 @@ void main()
 	ShiftRight(brr, SIZE, shift_d);
 	cout << "Массив после " << shift_d << " сдвигов вправо (исходный массив): " << endl;
 	Print(brr, SIZE);
-	cout << delimiter << endl;
+	cout << delimiter << endl;*/
 
 	//	Двумерный массив с целочисленными значениями
 	
 	int i_arr_2[ROWS][COLS];
 	FillRand(i_arr_2, ROWS, COLS);
 	Print(i_arr_2, ROWS, COLS);
-	char dir;
-	cout << "Введите направление сортировки двумерного массива:\n\'v\' - сортировака в столбце по возрастанию;\n\'h\' - сортировка в строке по возрастанию" << endl; cin >> dir;
-	Sort(i_arr_2, ROWS, COLS, dir);
+	//char dir;
+	//cout << "Введите направление сортировки двумерного массива:\n\'v\' - сортировака в столбце по возрастанию;\n\'h\' - сортировка в строке по возрастанию" << endl; cin >> dir;
+	Sort(i_arr_2, ROWS, COLS);
 	cout << endl;
 	Print(i_arr_2, ROWS, COLS);
 	cout << "Сумма всех элементов массива: " << Sum(i_arr_2, ROWS, COLS) << endl;
@@ -137,7 +139,7 @@ void main()
 
 	//	Двумерный массив с вещественными значениями
 
-	cout << delimiter << endl;
+	/*cout << delimiter << endl;
 	double i_brr_2[ROWS][COLS];
 	FillRand(i_brr_2, ROWS, COLS);
 	Print(i_brr_2, ROWS, COLS);
@@ -159,7 +161,7 @@ void main()
 	Print(i_brr_2, ROWS, COLS);
 	ShiftRight(i_brr_2, ROWS, COLS, shift_2_d);
 	cout << "Массив после " << shift_2_d << " сдвигов вправо (исходный массив): " << endl;
-	Print(i_brr_2, ROWS, COLS);
+	Print(i_brr_2, ROWS, COLS);*/
 }
 
 void FillRand(int arr[], const int n) //функция возвращает псевдослучайное число в диапазоне от 0 до 32 767.
@@ -177,17 +179,17 @@ void FillRand(double arr[], const int n)
 		arr[i] /= 100;
 	}
 }
-void FillRand(int arr[ROWS][COLS], const int ROWS, const int COLS)
+void FillRand(int arr[ROWS][COLS], const int ROWS, const int COLS, int minRand, int maxRand)
 {
 	for (int i = 0; i < ROWS; i++)
 	{
 		for (int j = 0; j < COLS; j++)
 		{
-			arr[i][j] = rand();
+			arr[i][j] = rand() % (maxRand-minRand)+minRand;
 		}
 	}
 }
-void FillRand(double arr[ROWS][COLS], const int ROWS, const int COLS)
+void FillRand(double arr[ROWS][COLS], const int ROWS, const int COLS, double minRand, double maxRand)
 {
 	for (int i = 0; i < ROWS; i++)
 	{
@@ -268,9 +270,36 @@ void Sort(double arr[], const int n)
 		}
 	}
 }
-void Sort(int arr[ROWS][COLS], const int ROWS, const int COLS, char dir)
+void Sort(int arr[ROWS][COLS], const int ROWS, const int COLS)
 {
-	switch (dir)
+	int iteration = 0;
+	int exchanges = 0;
+	for (int i = 0; i < ROWS; i++)
+	{
+		for (int j = 0; j < COLS; j++)
+		{
+			//arr[i] - выбранный элемент;
+			//arr[j] - перебираемый элемент;
+			for (int k = i; k < ROWS; k++)
+			{
+				for (int l = k==i ? j+1 : 0; l < COLS; l++)
+				{
+					iteration++;
+					//Если перебираемый элемент меньше, чем выбранный, меняем их местами
+					if (arr[k][l] < arr[i][j])
+					{
+						int buffer = arr[i][j];
+						arr[i][j] = arr[k][l];
+						arr[k][l] = buffer;
+						exchanges++;
+					}
+				}
+			}
+		}
+	}
+	cout << "Количество итераций: " << iteration << endl;
+	cout << "Количество обменов: " << exchanges << endl;
+	/*switch (dir)
 	{
 	case 'v':
 		for (int j = 0; j < COLS; j++)
@@ -301,11 +330,33 @@ void Sort(int arr[ROWS][COLS], const int ROWS, const int COLS, char dir)
 				arr[i][j] = buff_h[j];
 			}
 		}
-	}
+	}*/
 }
-void Sort(double arr[ROWS][COLS], const int ROWS, const int COLS, char dir)
+void Sort(double arr[ROWS][COLS], const int ROWS, const int COLS)
 {
-	switch (dir)
+	for (int i = 0; i < ROWS; i++)
+	{
+		for (int j = 0; j < COLS; j++)
+		{
+			//arr[i] - выбранный элемент;
+			//arr[j] - перебираемый элемент;
+			for (int k = i; k < ROWS; k++)
+			{
+				for (int l = k == i ? j + 1 : 0; l < COLS; l++)
+				{
+					//Если перебираемый элемент меньше, чем выбранный, меняем их местами
+					if (arr[k][l] < arr[i][j])
+					{
+						double buffer = arr[i][j];
+						arr[i][j] = arr[k][l];
+						arr[k][l] = buffer;
+					}
+				}
+			}
+		}
+	}
+	
+	/*switch (dir)
 	{
 	case 'v':
 		for (int j = 0; j < COLS; j++)
@@ -336,7 +387,7 @@ void Sort(double arr[ROWS][COLS], const int ROWS, const int COLS, char dir)
 				arr[i][j] = buff_h_d[j];
 			}
 		}
-	}
+	}*/
 }
 int Sum(int arr[], const int n)
 {
@@ -492,7 +543,14 @@ void ShiftLeft(double arr[], const int n, int shift)
 }
 void ShiftLeft(int arr[ROWS][COLS], const int ROWS, const int COLS, int shift)
 {
-	for (int i = 0; i < shift; i++)
+	//Сдвиг по строкам
+	/*for (int i = 0; i < ROWS; i++)
+	{
+		ShiftLeft(arr[i], COLS, shift); 
+	}*/
+	//Сквозной сдвиг
+	ShiftLeft(arr[0], ROWS * COLS, shift); //Когда массив передается в качестве аргумента, передается только адрес массива (т.е. адрес первого элемента)
+	/*for (int i = 0; i < shift; i++)
 	{
 		int buffer = arr[0][0];
 		for (int i = 0; i < ROWS; i++)
@@ -505,11 +563,19 @@ void ShiftLeft(int arr[ROWS][COLS], const int ROWS, const int COLS, int shift)
 			arr[i][COLS-1] = buffer_i;
 		}
 		arr[ROWS - 1][COLS - 1] = buffer;
-	}
+	}*/
 }
 void ShiftLeft(double arr[ROWS][COLS], const int ROWS, const int COLS, int shift)
 {
-	for (int i = 0; i < shift; i++)
+
+	//Сдвиг по строкам
+	/*for (int i = 0; i < ROWS; i++)
+	{
+		ShiftLeft(arr[i], COLS, shift);
+	}*/
+	//Сквозной сдвиг
+	ShiftLeft(arr[0], ROWS * COLS, shift);
+	/*for (int i = 0; i < shift; i++)
 	{
 		double buffer = arr[0][0];
 		for (int i = 0; i < ROWS; i++)
@@ -522,11 +588,12 @@ void ShiftLeft(double arr[ROWS][COLS], const int ROWS, const int COLS, int shift
 			arr[i][COLS - 1] = buffer_i;
 		}
 		arr[ROWS - 1][COLS - 1] = buffer;
-	}
+	}*/
 }
 void ShiftRight(int arr[], const int n, int shift)
 {
-	for (int i = 0; i < shift; i++)
+	ShiftLeft(arr, n, n - shift);
+	/*for (int i = 0; i < shift; i++)
 	{
 		int buffer = arr[n-1];
 		for (int i = n - 1; i > 0; i--)
@@ -534,11 +601,12 @@ void ShiftRight(int arr[], const int n, int shift)
 			arr[i] = arr[i-1];
 		}
 		arr[0] = buffer;
-	}
+	}*/
 }
 void ShiftRight(double arr[], const int n, int shift)
 {
-	for (int i = 0; i < shift; i++)
+	ShiftLeft(arr, n, n - shift);
+	/*for (int i = 0; i < shift; i++)
 	{
 		double buffer = arr[n - 1];
 		for (int i = n - 1; i > 0; i--)
@@ -546,11 +614,12 @@ void ShiftRight(double arr[], const int n, int shift)
 			arr[i] = arr[i - 1];
 		}
 		arr[0] = buffer;
-	}
+	}*/
 }
 void ShiftRight(int arr[ROWS][COLS], const int ROWS, const int COLS, int shift)
 {
-	for (int i = 0; i < shift; i++)
+	
+	/*for (int i = 0; i < shift; i++)
 	{
 		int buffer = arr[ROWS-1][COLS-1];
 		for (int i = ROWS-1; i >=0; i--)
@@ -563,7 +632,7 @@ void ShiftRight(int arr[ROWS][COLS], const int ROWS, const int COLS, int shift)
 			arr[i][0] = buffer_i;
 		}
 		arr[0][0] = buffer;
-	}
+	}*/
 }
 void ShiftRight(double arr[ROWS][COLS], const int ROWS, const int COLS, int shift)
 {
