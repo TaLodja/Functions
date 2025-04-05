@@ -1,30 +1,13 @@
-﻿#include <iostream>
-using namespace std;
+﻿#include "stdafx.h"
+#include "constants.h"
+#include "FillRand.h"
+#include "Print.h"
 
-#define delimiter "\n-----------------------------------------\n"
-const int ROWS = 10;
-const int COLS = 10;
-int buff_h[COLS];
-double buff_h_d[COLS];
-int buff_v[ROWS];
-double buff_v_d[ROWS];
-
-void FillRand(int arr[], const int n);  // Прототип функции: заполняет массив случайными числами
-void FillRand(double arr[], const int n);
-void FillRand(int arr[ROWS][COLS], const int ROWS, const int COLS, int minRand=0, int maxRand=100);
-void FillRand(double arr[ROWS][COLS], const int ROWS, const int COLS, double minRand = 0, double maxRand = 100);
-
-void Print(double arr[], const int n);  // Прототип функции: выводит массив на экран
-void Print(int arr[], const int n);
-void Print(int arr[ROWS][COLS], const int ROWS, const int COLS);
-void Print(double arr[ROWS][COLS], const int ROWS, const int COLS);
 
 void Sort(int arr[], const int n);  // Прототип функции: сортирует массив
 void Sort(double arr[], const int n);
 void Sort(int arr[ROWS][COLS], const int ROWS, const int COLS);
-//void Sort(int arr[ROWS][COLS], const int ROWS, const int COLS, char dir);
 void Sort(double arr[ROWS][COLS], const int ROWS, const int COLS);
-//void Sort(double arr[ROWS][COLS], const int ROWS, const int COLS, char dir);
 
 int Sum(int arr[], const int n); // Прототип функции: возвращает сумму элементов массива
 double Sum(double arr[], const int n);
@@ -164,82 +147,8 @@ void main()
 	Print(i_brr_2, ROWS, COLS);*/
 }
 
-void FillRand(int arr[], const int n) //функция возвращает псевдослучайное число в диапазоне от 0 до 32 767.
-{
-	for (int i = 0; i < n; i++)
-	{
-		arr[i] = rand() % 100;
-	}
-}
-void FillRand(double arr[], const int n)
-{
-	for (int i = 0; i < n; i++)
-	{
-		arr[i] = rand() % 10000;
-		arr[i] /= 100;
-	}
-}
-void FillRand(int arr[ROWS][COLS], const int ROWS, const int COLS, int minRand, int maxRand)
-{
-	for (int i = 0; i < ROWS; i++)
-	{
-		for (int j = 0; j < COLS; j++)
-		{
-			arr[i][j] = rand() % (maxRand-minRand)+minRand;
-		}
-	}
-}
-void FillRand(double arr[ROWS][COLS], const int ROWS, const int COLS, double minRand, double maxRand)
-{
-	for (int i = 0; i < ROWS; i++)
-	{
-		for (int j = 0; j < COLS; j++)
-		{
-			arr[i][j] = rand() % 10000;
-			arr[i][j] /= 100;
-		}
-	}
-}
-void Print(int arr[], const int n) //функция выводит массив на экран
-{
-	for (int i = 0; i < n; i++)
-	{
-		cout << arr[i] << "\t";
-	}
-	cout << endl;
-}
-void Print(double arr[], const int n)
-{
-	for (int i = 0; i < n; i++)
-	{
-		cout << arr[i] << "\t";
-	}
-	cout << endl;
-}
-void Print(int arr[ROWS][COLS], const int ROWS, const int COLS)
-{
-	for (int i = 0; i < ROWS; i++)
-	{
-		for (int j = 0; j < COLS; j++)
-		{
-			cout << arr[i][j] << "\t";
-		}
-		cout << endl;
-	}
-	cout << endl;
-}
-void Print(double arr[ROWS][COLS], const int ROWS, const int COLS)
-{
-	for (int i = 0; i < ROWS; i++)
-	{
-		for (int j = 0; j < COLS; j++)
-		{
-			cout << arr[i][j] << "\t";
-		}
-		cout << endl;
-	}
-	cout << endl;
-}
+
+
 void Sort(int arr[], const int n) //функция сортирует массив
 {
 	for (int i = 0; i < n; i++)
