@@ -1,3 +1,4 @@
-#pragma once
+Ôªø#pragma once
 #include <iostream>
-using namespace std; //Õ» Œ√ƒ¿ Õ≈ 
+
+using namespace std; //–ù–ò–ö–û–ì–î–ê –ù–ï 

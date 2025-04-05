@@ -27,6 +27,15 @@
     <ClCompile Include="Statistics.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Sort.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Shift.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="UniqueRand.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stdafx.h">
@@ -42,6 +51,15 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Statistics.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Sort.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Shift.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="UniqueRand.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

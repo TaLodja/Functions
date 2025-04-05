@@ -1,17 +1,17 @@
-#include "FillRand.h"
+п»ї#include "FillRand.h"
 
-void FillRand(int arr[], const int n) //функция возвращает псевдослучайное число в диапазоне от 0 до 32 767.
+void FillRand(int arr[], const int n, int minRand, int maxRand) //С„СѓРЅРєС†РёСЏ РІРѕР·РІСЂР°С‰Р°РµС‚ РїСЃРµРІРґРѕСЃР»СѓС‡Р°Р№РЅРѕРµ С‡РёСЃР»Рѕ РІ РґРёР°РїР°Р·РѕРЅРµ РѕС‚ 0 РґРѕ 32 767.
 {
 	for (int i = 0; i < n; i++)
 	{
-		arr[i] = rand() % 100;
+		arr[i] = rand() % (maxRand - minRand) + minRand;
 	}
 }
-void FillRand(double arr[], const int n)
+void FillRand(double arr[], const int n, double minRand, double maxRand)
 {
 	for (int i = 0; i < n; i++)
 	{
-		arr[i] = rand() % 10000;
+		arr[i] = rand() % (int)(maxRand - minRand) + minRand;
 		arr[i] /= 100;
 	}
 }
@@ -31,7 +31,7 @@ void FillRand(double arr[ROWS][COLS], const int ROWS, const int COLS, double min
 	{
 		for (int j = 0; j < COLS; j++)
 		{
-			arr[i][j] = rand() % 10000;
+			arr[i][j] = rand() % (int)(maxRand - minRand) + minRand;
 			arr[i][j] /= 100;
 		}
 	}

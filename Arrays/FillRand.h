@@ -1,8 +1,8 @@
-#pragma once
+п»ї#pragma once
 #include "stdafx.h"
 #include "constants.h"
 
-void FillRand(int arr[], const int n);  // Прототип функции: заполняет массив случайными числами
-void FillRand(double arr[], const int n);
+void FillRand(int arr[], const int n, int minRand=0, int maxRand=100);  // РџСЂРѕС‚РѕС‚РёРї С„СѓРЅРєС†РёРё: Р·Р°РїРѕР»РЅСЏРµС‚ РјР°СЃСЃРёРІ СЃР»СѓС‡Р°Р№РЅС‹РјРё С‡РёСЃР»Р°РјРё
+void FillRand(double arr[], const int n, double minRand = 0, double maxRand = 100);
 void FillRand(int arr[ROWS][COLS], const int ROWS, const int COLS, int minRand = 0, int maxRand = 100);
 void FillRand(double arr[ROWS][COLS], const int ROWS, const int COLS, double minRand = 0, double maxRand = 100);

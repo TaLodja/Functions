@@ -1,5 +1,5 @@
-#include "Print.h"
-void Print(int arr[], const int n) //функция выводит массив на экран
+п»ї#include "Print.h"
+void Print(int arr[], const int n) //С„СѓРЅРєС†РёСЏ РІС‹РІРѕРґРёС‚ РјР°СЃСЃРёРІ РЅР° СЌРєСЂР°РЅ
 {
 	for (int i = 0; i < n; i++)
 	{
