@@ -23,8 +23,6 @@ template<typename T>
 void Sort(T arr[], const int n);  // Прототип функции: сортирует массив
 template<typename T>
 void Sort(T arr[ROWS][COLS], const int ROWS, const int COLS);
-//void Sort(int arr[ROWS][COLS], const int ROWS, const int COLS, char dir);
-//void Sort(double arr[ROWS][COLS], const int ROWS, const int COLS, char dir);
 
 template<typename T>
 T Sum(T arr[], const int n); // Прототип функции: возвращает сумму элементов массива
@@ -115,8 +113,6 @@ void main()
 	int i_arr_2[ROWS][COLS];
 	FillRand(i_arr_2, ROWS, COLS);
 	Print(i_arr_2, ROWS, COLS);
-	//char dir;
-	//cout << "Введите направление сортировки двумерного массива:\n\'v\' - сортировака в столбце по возрастанию;\n\'h\' - сортировка в строке по возрастанию" << endl; cin >> dir;
 	Sort(i_arr_2, ROWS, COLS);
 	cout << endl;
 	Print(i_arr_2, ROWS, COLS);
@@ -267,38 +263,6 @@ void Sort(T arr[ROWS][COLS], const int ROWS, const int COLS)
 	}
 	cout << "Количество итераций: " << iteration << endl;
 	cout << "Количество обменов: " << exchanges << endl;
-	/*switch (dir)
-	{
-	case 'v':
-		for (int j = 0; j < COLS; j++)
-		{
-
-			for (int i = 0; i < ROWS; i++)
-			{
-				buff_v[i] = arr[i][j];
-			}
-			Sort(buff_v, ROWS);
-			for (int i = 0; i < ROWS; i++)
-			{
-				arr[i][j] = buff_v[i];
-			}
-		}
-		break;
-	case 'h':
-		for (int i = 0; i < ROWS; i++)
-		{
-			
-			for (int j = 0; j < COLS; j++)
-			{
-				buff_h[j] = arr[i][j];
-			}
-			Sort(buff_h, COLS);
-			for (int j = 0; j < COLS; j++)
-			{
-				arr[i][j] = buff_h[j];
-			}
-		}
-	}*/
 }
 template<typename T>
 T Sum(T arr[], const int n)
@@ -413,7 +377,8 @@ void ShiftRight(T arr[], const int n, int shift)
 template<typename T>
 void ShiftRight(T arr[ROWS][COLS], const int ROWS, const int COLS, int shift)
 {
-	for (int i = 0; i < shift; i++)
+	ShiftLeft(arr[0], ROWS * COLS, ROWS * COLS - shift);
+	/*for (int i = 0; i < shift; i++)
 	{
 		T buffer = arr[ROWS - 1][COLS - 1];
 		for (int i = ROWS - 1; i >= 0; i--)
@@ -426,5 +391,5 @@ void ShiftRight(T arr[ROWS][COLS], const int ROWS, const int COLS, int shift)
 			arr[i][0] = buffer_i;
 		}
 		arr[0][0] = buffer;
-	}
+	}*/
 }
