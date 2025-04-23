@@ -3,17 +3,17 @@ void Print(int arr[], const int n) //функция выводит массив 
 {
 	for (int i = 0; i < n; i++)
 	{
-		cout << arr[i] << "\t";
+		std::cout << arr[i] << "\t";
 	}
-	cout << endl;
+	std::cout << std::endl;
 }
 void Print(double arr[], const int n)
 {
 	for (int i = 0; i < n; i++)
 	{
-		cout << arr[i] << "\t";
+		std::cout << arr[i] << "\t";
 	}
-	cout << endl;
+	std::cout << std::endl;
 }
 void Print(int arr[ROWS][COLS], const int ROWS, const int COLS)
 {
@@ -21,11 +21,11 @@ void Print(int arr[ROWS][COLS], const int ROWS, const int COLS)
 	{
 		for (int j = 0; j < COLS; j++)
 		{
-			cout << arr[i][j] << "\t";
+			std::cout << arr[i][j] << "\t";
 		}
-		cout << endl;
+		std::cout << std::endl;
 	}
-	cout << endl;
+	std::cout << std::endl;
 }
 void Print(double arr[ROWS][COLS], const int ROWS, const int COLS)
 {
@@ -33,9 +33,9 @@ void Print(double arr[ROWS][COLS], const int ROWS, const int COLS)
 	{
 		for (int j = 0; j < COLS; j++)
 		{
-			cout << arr[i][j] << "\t";
+			std::cout << arr[i][j] << "\t";
 		}
-		cout << endl;
+		std::cout << std::endl;
 	}
-	cout << endl;
+	std::cout << std::endl;
 }

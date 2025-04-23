@@ -1,5 +1,5 @@
 ﻿#pragma once
-#include "stdafx.h"
+
 #include "constants.h"
 
 void Print(double arr[], const int n);  // Прототип функции: выводит массив на экран
