@@ -1,4 +1,4 @@
-#include <iostream>
+ï»¿#include <iostream>
 #include <stdlib.h>
 #include "LIB_Functions.h"
 
@@ -114,7 +114,7 @@ namespace MathLIBArray
 		}
 		std::cout << std::endl;
 	}
-	void WorkArray::Sort(int arr[], const int n) //ôóíêöèÿ ñîðòèðóåò ìàññèâ
+	void WorkArray::Sort(int arr[], const int n) //Ñ„ÑƒÐ½ÐºÑ†Ð¸Ñ ÑÐ¾Ñ€Ñ‚Ð¸Ñ€ÑƒÐµÑ‚ Ð¼Ð°ÑÑÐ¸Ð²
 	{
 		for (int i = 0; i < n; i++)
 		{
@@ -340,23 +340,23 @@ namespace MathLIBArray
 	}
 	void WorkArray::ShiftLeft(int arr[ROWS][COLS], const int ROWS, const int COLS, int shift)
 	{
-		//Ñäâèã ïî ñòðîêàì
+		//Ð¡Ð´Ð²Ð¸Ð³ Ð¿Ð¾ ÑÑ‚Ñ€Ð¾ÐºÐ°Ð¼
 		/*for (int i = 0; i < ROWS; i++)
 		{
 			ShiftLeft(arr[i], COLS, shift);
 		}*/
-		//Ñêâîçíîé ñäâèã
+		//Ð¡ÐºÐ²Ð¾Ð·Ð½Ð¾Ð¹ ÑÐ´Ð²Ð¸Ð³
 		ShiftLeft(arr[0], ROWS * COLS, shift);
 	}
 	void WorkArray::ShiftLeft(double arr[ROWS][COLS], const int ROWS, const int COLS, int shift)
 	{
 
-		//Ñäâèã ïî ñòðîêàì
+		//Ð¡Ð´Ð²Ð¸Ð³ Ð¿Ð¾ ÑÑ‚Ñ€Ð¾ÐºÐ°Ð¼
 		/*for (int i = 0; i < ROWS; i++)
 		{
 			ShiftLeft(arr[i], COLS, shift);
 		}*/
-		//Ñêâîçíîé ñäâèã
+		//Ð¡ÐºÐ²Ð¾Ð·Ð½Ð¾Ð¹ ÑÐ´Ð²Ð¸Ð³
 		ShiftLeft(arr[0], ROWS * COLS, shift);
 	}
 	void WorkArray::ShiftRight(int arr[], const int n, int shift)

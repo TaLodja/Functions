@@ -1,4 +1,4 @@
-#pragma once
+п»ї#pragma once
 
 #include "constants.h"
 
@@ -7,27 +7,27 @@ namespace MathLIBArray
 	class WorkArray
 	{
 	public:
-		static void UniqueRand(int arr[], const int n, int minRand = 0, int maxRand = 100);  // Прототип функции: заполняет массив уникальными случайными числами
+		static void UniqueRand(int arr[], const int n, int minRand = 0, int maxRand = 100);  // РџСЂРѕС‚РѕС‚РёРї С„СѓРЅРєС†РёРё: Р·Р°РїРѕР»РЅСЏРµС‚ РјР°СЃСЃРёРІ СѓРЅРёРєР°Р»СЊРЅС‹РјРё СЃР»СѓС‡Р°Р№РЅС‹РјРё С‡РёСЃР»Р°РјРё
 		static void UniqueRand(double arr[], const int n, double minRand = 0, double maxRand = 100);
 		static void UniqueRand(int arr[ROWS][COLS], const int ROWS, const int COLS, int minRand = 0, int maxRand = 100);
 		static void UniqueRand(double arr[ROWS][COLS], const int ROWS, const int COLS, double minRand = 0, double maxRand = 100);
 
-		static void Print(double arr[], const int n);  // Прототип функции: выводит массив на экран
+		static void Print(double arr[], const int n);  // РџСЂРѕС‚РѕС‚РёРї С„СѓРЅРєС†РёРё: РІС‹РІРѕРґРёС‚ РјР°СЃСЃРёРІ РЅР° СЌРєСЂР°РЅ
 		static void Print(int arr[], const int n);
 		static void Print(int arr[ROWS][COLS], const int ROWS, const int COLS);
 		static void Print(double arr[ROWS][COLS], const int ROWS, const int COLS);
 
-		static void Sort(int arr[], const int n);  // Прототип функции: сортирует массив
+		static void Sort(int arr[], const int n);  // РџСЂРѕС‚РѕС‚РёРї С„СѓРЅРєС†РёРё: СЃРѕСЂС‚РёСЂСѓРµС‚ РјР°СЃСЃРёРІ
 		static void Sort(double arr[], const int n);
 		static void Sort(int arr[ROWS][COLS], const int ROWS, const int COLS);
 		static void Sort(double arr[ROWS][COLS], const int ROWS, const int COLS);
 	
-		static void ShiftLeft(int arr[], const int n, int shift); // Прототип функции: сдвигает массив на заданное число элементов влево
+		static void ShiftLeft(int arr[], const int n, int shift); // РџСЂРѕС‚РѕС‚РёРї С„СѓРЅРєС†РёРё: СЃРґРІРёРіР°РµС‚ РјР°СЃСЃРёРІ РЅР° Р·Р°РґР°РЅРЅРѕРµ С‡РёСЃР»Рѕ СЌР»РµРјРµРЅС‚РѕРІ РІР»РµРІРѕ
 		static void ShiftLeft(double arr[], const int n, int shift);
 		static void ShiftLeft(int arr[ROWS][COLS], const int ROWS, const int COLS, int shift);
 		static void ShiftLeft(double arr[ROWS][COLS], const int ROWS, const int COLS, int shift);
 
-		static void ShiftRight(int arr[], const int n, int shift); // Прототип функции: сдвигает массив на заданное число элементов вправо
+		static void ShiftRight(int arr[], const int n, int shift); // РџСЂРѕС‚РѕС‚РёРї С„СѓРЅРєС†РёРё: СЃРґРІРёРіР°РµС‚ РјР°СЃСЃРёРІ РЅР° Р·Р°РґР°РЅРЅРѕРµ С‡РёСЃР»Рѕ СЌР»РµРјРµРЅС‚РѕРІ РІРїСЂР°РІРѕ
 		static void ShiftRight(double arr[], const int n, int shift);
 		static void ShiftRight(int arr[ROWS][COLS], const int ROWS, const int COLS, int shift);
 		static void ShiftRight(double arr[ROWS][COLS], const int ROWS, const int COLS, int shift);
@@ -35,22 +35,22 @@ namespace MathLIBArray
 	class StatMathArray
 	{
 	public:
-		static int Sum(int arr[], const int n); // Прототип функции: возвращает сумму элементов массива
+		static int Sum(int arr[], const int n); // РџСЂРѕС‚РѕС‚РёРї С„СѓРЅРєС†РёРё: РІРѕР·РІСЂР°С‰Р°РµС‚ СЃСѓРјРјСѓ СЌР»РµРјРµРЅС‚РѕРІ РјР°СЃСЃРёРІР°
 		static double Sum(double arr[], const int n);
 		static int Sum(int arr[ROWS][COLS], const int ROWS, const int COLS);
 		static double Sum(double arr[ROWS][COLS], const int ROWS, const int COLS);
 
-		static double Avg(int arr[], const int n); // Прототип функции: возвращает среднее арифметическое элементов массива
+		static double Avg(int arr[], const int n); // РџСЂРѕС‚РѕС‚РёРї С„СѓРЅРєС†РёРё: РІРѕР·РІСЂР°С‰Р°РµС‚ СЃСЂРµРґРЅРµРµ Р°СЂРёС„РјРµС‚РёС‡РµСЃРєРѕРµ СЌР»РµРјРµРЅС‚РѕРІ РјР°СЃСЃРёРІР°
 		static double Avg(double arr[], const int n);
 		static double Avg(int arr[ROWS][COLS], const int ROWS, const int COLS);
 		static double Avg(double arr[ROWS][COLS], const int ROWS, const int COLS);
 
-		static int MinValueIn(int arr[], const int n); // Прототип функции: возвращает минимальное значение в массиве
+		static int MinValueIn(int arr[], const int n); // РџСЂРѕС‚РѕС‚РёРї С„СѓРЅРєС†РёРё: РІРѕР·РІСЂР°С‰Р°РµС‚ РјРёРЅРёРјР°Р»СЊРЅРѕРµ Р·РЅР°С‡РµРЅРёРµ РІ РјР°СЃСЃРёРІРµ
 		static double MinValueIn(double arr[], const int n);
 		static int MinValueIn(int arr[ROWS][COLS], const int ROWS, const int COLS);
 		static double MinValueIn(double arr[ROWS][COLS], const int ROWS, const int COLS);
 
-		static int MaxValueIn(int arr[], const int n); // Прототип функции: возвращает максимальное значение в массиве
+		static int MaxValueIn(int arr[], const int n); // РџСЂРѕС‚РѕС‚РёРї С„СѓРЅРєС†РёРё: РІРѕР·РІСЂР°С‰Р°РµС‚ РјР°РєСЃРёРјР°Р»СЊРЅРѕРµ Р·РЅР°С‡РµРЅРёРµ РІ РјР°СЃСЃРёРІРµ
 		static double MaxValueIn(double arr[], const int n);
 		static int MaxValueIn(int arr[ROWS][COLS], const int ROWS, const int COLS);
 		static double MaxValueIn(double arr[ROWS][COLS], const int ROWS, const int COLS);
