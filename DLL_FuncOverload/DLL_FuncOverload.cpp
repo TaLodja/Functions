@@ -1,4 +1,4 @@
-#include <iostream>
+п»ї#include <iostream>
 #include <stdlib.h>
 #include "DLL_FuncOverload.h"
 
@@ -338,23 +338,23 @@ void ShiftLeft(double arr[], const int n, int shift)
 }
 void ShiftLeft(int arr[ROWS][COLS], const int ROWS, const int COLS, int shift)
 {
-	//По строкам
+	//РџРѕ СЃС‚СЂРѕРєР°Рј
 	/*for (int i = 0; i < ROWS; i++)
 	{
 		ShiftLeft(arr[i], COLS, shift);
 	}*/
-	//Сквозное
+	//РЎРєРІРѕР·РЅРѕРµ
 	ShiftLeft(arr[0], ROWS * COLS, shift);
 }
 void ShiftLeft(double arr[ROWS][COLS], const int ROWS, const int COLS, int shift)
 {
 
-	//По строкам
+	//РџРѕ СЃС‚СЂРѕРєР°Рј
 	/*for (int i = 0; i < ROWS; i++)
 	{
 		ShiftLeft(arr[i], COLS, shift);
 	}*/
-	//Сквозное
+	//РЎРєРІРѕР·РЅРѕРµ
 	ShiftLeft(arr[0], ROWS * COLS, shift);
 }
 void ShiftRight(int arr[], const int n, int shift)
