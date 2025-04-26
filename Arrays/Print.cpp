@@ -1,4 +1,5 @@
-﻿#include "Print.h"
+﻿#include "stdafx.h"
+#include "Print.h"
 void Print(int arr[], const int n) //функция выводит массив на экран
 {
 	for (int i = 0; i < n; i++)
