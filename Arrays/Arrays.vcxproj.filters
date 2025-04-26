@@ -68,5 +68,8 @@
     <ClInclude Include="TemplatedArrayFunctions.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="TemplatedArrayFunction_2.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

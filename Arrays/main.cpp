@@ -1,4 +1,4 @@
-﻿#include "FillRand.h"
+﻿/*#include "FillRand.h"
 #include "UniqueRand.h"
 #include "TemplatedArrayFunctions.h"
 #include "TemplatedArrayFunctions.cpp"
@@ -32,7 +32,7 @@ void main()
 	ShiftRight(arr, n, shift);
 	cout << "Массив после " << shift << " сдвигов вправо (исходный массив): " << endl;
 	Print(arr, n);*/
-	cout << delimiter << endl;
+	/*cout << delimiter << endl;
 
 	cout << "Одномерный массив с вещественными значениями" << endl;
 
@@ -59,7 +59,7 @@ void main()
 	ShiftRight(brr, SIZE, shift_d);
 	cout << "Массив после " << shift_d << " сдвигов вправо (исходный массив): " << endl;
 	Print(brr, SIZE);*/
-	cout << delimiter << endl;
+	/*cout << delimiter << endl;
 
 	cout << "Двумерный массив с целочисленными значениями" << endl;
 
@@ -86,7 +86,7 @@ void main()
 	ShiftRight(i_arr_2, ROWS, COLS, shift_2);
 	cout << "Массив после " << shift_2 << " сдвигов вправо (исходный массив): " << endl;
 	Print(i_arr_2, ROWS, COLS);*/
-	cout << delimiter << endl;
+	/*cout << delimiter << endl;
 
 	cout << "Двумерный массив с вещественными значениями" << endl;
 
@@ -113,4 +113,4 @@ void main()
 	ShiftRight(i_brr_2, ROWS, COLS, shift_2_d);
 	cout << "Массив после " << shift_2_d << " сдвигов вправо (исходный массив): " << endl;
 	Print(i_brr_2, ROWS, COLS);*/
-}
+/*}*/
