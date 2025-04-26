@@ -1,17 +1,7 @@
-﻿#include "stdafx.h"
-using namespace std;
-
-#include "constants.h"
-#include "FillRand.h"
+﻿#include "FillRand.h"
 #include "UniqueRand.h"
-#include "Print.h"
-#include "Print.cpp"
-#include "Sort.h"
-#include "Sort.cpp"
-#include "Statics.h"
-#include "Statics.cpp"
-#include "Shift.h"
-#include "Shift.cpp"
+#include "TemplatedArrayFunctions.h"
+#include "TemplatedArrayFunctions.cpp"
 
 void main()
 {
@@ -34,14 +24,14 @@ void main()
 	cout << delimiter << endl;
 	cout << "Исходный массив: " << endl;
 	Print(arr, n);
-	int shift;
+	/*int shift;
 	cout << "Введите количество сдвигов: "; cin >> shift;
 	ShiftLeft(arr, n, shift);
 	cout << "Массив после " << shift << " сдвигов влево: " << endl;
 	Print(arr, n);
 	ShiftRight(arr, n, shift);
 	cout << "Массив после " << shift << " сдвигов вправо (исходный массив): " << endl;
-	Print(arr, n);
+	Print(arr, n);*/
 	cout << delimiter << endl;
 
 	cout << "Одномерный массив с вещественными значениями" << endl;
@@ -61,14 +51,14 @@ void main()
 	cout << delimiter << endl;
 	cout << "Исходный массив: " << endl;
 	Print(brr, SIZE);
-	int shift_d;
+	/*int shift_d;
 	cout << "Введите количество сдвигов: "; cin >> shift_d;
 	ShiftLeft(brr, SIZE, shift_d);
 	cout << "Массив после " << shift_d << " сдвигов влево: " << endl;
 	Print(brr, SIZE);
 	ShiftRight(brr, SIZE, shift_d);
 	cout << "Массив после " << shift_d << " сдвигов вправо (исходный массив): " << endl;
-	Print(brr, SIZE);
+	Print(brr, SIZE);*/
 	cout << delimiter << endl;
 
 	cout << "Двумерный массив с целочисленными значениями" << endl;
@@ -88,14 +78,14 @@ void main()
 	cout << delimiter << endl;
 	cout << "Исходный массив: " << endl;
 	Print(i_arr_2, ROWS, COLS);
-	int shift_2;
+	/*int shift_2;
 	cout << "Введите количество сдвигов: "; cin >> shift_2;
 	ShiftLeft(i_arr_2, ROWS, COLS, shift_2);
 	cout << "Массив после " << shift_2 << " сдвигов влево: " << endl;
 	Print(i_arr_2, ROWS, COLS);
 	ShiftRight(i_arr_2, ROWS, COLS, shift_2);
 	cout << "Массив после " << shift_2 << " сдвигов вправо (исходный массив): " << endl;
-	Print(i_arr_2, ROWS, COLS);
+	Print(i_arr_2, ROWS, COLS);*/
 	cout << delimiter << endl;
 
 	cout << "Двумерный массив с вещественными значениями" << endl;
@@ -115,12 +105,12 @@ void main()
 	cout << delimiter << endl;
 	cout << "Исходный массив: " << endl;
 	Print(i_brr_2, ROWS, COLS);
-	int shift_2_d;
+	/*int shift_2_d;
 	cout << "Введите количество сдвигов: "; cin >> shift_2_d;
 	ShiftLeft(i_brr_2, ROWS, COLS, shift_2_d);
 	cout << "Массив после " << shift_2_d << " сдвигов влево: " << endl;
 	Print(i_brr_2, ROWS, COLS);
 	ShiftRight(i_brr_2, ROWS, COLS, shift_2_d);
 	cout << "Массив после " << shift_2_d << " сдвигов вправо (исходный массив): " << endl;
-	Print(i_brr_2, ROWS, COLS);
+	Print(i_brr_2, ROWS, COLS);*/
 }
